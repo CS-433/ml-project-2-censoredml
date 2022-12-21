@@ -11,9 +11,8 @@ Once the topics have been identified, we analyze and interpret the results to ga
 
 ## Report
 
-The report can be found [here](https://github.com/CS-433/cs-433-project-2-todo.pdf).
+The report can be found [here](https://github.com/CS-433/ml-project-2-censoredml/blob/master/report.pdf).
 
-Don't forget to add the link!
 
 ## Requirements
 To run this project, you will need Python 3 and the following libraries:
@@ -49,59 +48,65 @@ You can download the necessary package using the following command:
 
 ```pip install -r requirements.txt```
 
-
  
 ## Code organization
 
-The code is split into two main parts:
-blablabla
+In the data folder, you can find all the preprocess data used in this project. 
+* ```censored_tweets``` correspond to the original data
+* ```translated_string.csv``` correspond to the original data where the processing before translation and the translation have benn applied
+* ```out_clean.csv``` correspond to the data with all the preprocessing and the translation
+* ```to_be_clustered.csv``` is the same as out_clean with the expection that tweets each tweet is censored in only one country. Tweets that were censored in multiple countries have been duplicated and are now censored in only one country.
+* ```saved_models``` are the parameters for our best models with BERTopic
+* ```labelling``` are the labels for the 125 French tweets that have been manually labelled
+
+In the ```Algorithms``` folder, you can find notebooks corresponding to all the algorithms that have been tested
+
+The processing part can be found in the ```helpers``` folders
+
+Here is an overview of the codebase:
 
 ```
 .
 ├── Algorithms
 │   ├── BERT-France.ipynb
+│   ├── BERT-Germany.ipynb
 │   ├── BERT-India.ipynb
-│   ├── Bert.ipynb
+│   ├── BERT-Russian_Federation.ipynb
+│   ├── BERT-Turkey.ipynb
+│   ├── BTM.ipynb
 │   ├── GSDMM.ipynb
-│   └── LDA.ipynb
-├── BERT-France.ipynb
+│   ├── LDA.ipynb
+│   ├── bert_helpers.py
+│   └── lda_helpers.py
 ├── EDA.ipynb
 ├── README.md
-├── __pycache__
-│   ├── dict_replacement.cpython-38.pyc
-│   ├── helpers.cpython-38.pyc
-│   ├── mama.cpython-38.pyc
-│   ├── pre_processing.cpython-38.pyc
-│   └── preprocessing.cpython-38.pyc
-├── censored_tweets
 ├── data
+│   ├── censored_tweets.zip
 │   ├── labelling
 │   │   ├── France_final.csv.gz
 │   │   └── France_labeled.xlsx
 │   ├── out_clean.csv.gz
 │   ├── saved_models
 │   │   └── save_models_for_France.pkl
-│   └── to_be_clustered.csv.gz
+│   ├── to_be_clustered.csv.gz
+│   └── translated_string.csv.zip
 ├── helpers_notebooks
-│   ├── Eva_notebook.ipynb
 │   ├── Labelling.ipynb
-│   ├── Robin_notebook.ipynb
-│   ├── Transform DataFrames.ipynb
-│   ├── processing_after_traduction.ipynb
-│   └── processing_before_traduction.ipynb
+│   ├── processing_after_translation.ipynb
+│   └── processing_before_translation.ipynb
 ├── helpers_python
 │   ├── dict_replacement.py
 │   ├── helpers.py
 │   └── pre_processing.py
-├── out_clean.csv
-└── requierments.txt
+├── report.pdf
+└── requirements.txt
 ```
 
 ## Results
 
 The results of the topic modeling can be used to gain insights into the content of censored tweets. For example, the identified topics can be used to understand what types of content are being censored, and the top words for each topic can provide further information on the specific details of the censored tweets.
 
-Our BERTopic best BERTopic parameters for in the following folder:
+Our BERTopic best parameters for each country can be found in the following folder: ```data/saved_models```
 
 ## Authors
 
