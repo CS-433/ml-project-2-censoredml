@@ -51,11 +51,11 @@ You can download the necessary package using the following command:
  
 ## Code organization
 
-In the data folder, you can find all the preprocess data used in this project. 
-* ```censored_tweets``` correspond to the original data
-* ```translated_string.csv``` correspond to the original data where the processing before translation and the translation have benn applied
+In the data folder, you can find all the preprocessed data used in this project. 
+* ```censored_tweets``` are the original data
+* ```translated_string.csv``` correspond to the original data where the processing before translation and the translation have been applied
 * ```out_clean.csv``` correspond to the data with all the preprocessing and the translation
-* ```to_be_clustered.csv``` is the same as out_clean with the expection that tweets each tweet is censored in only one country. Tweets that were censored in multiple countries have been duplicated and are now censored in only one country.
+* ```to_be_clustered.csv``` is the same as out_clean with the exception that each tweet is censored in only one country. Tweets that were censored in multiple countries have been duplicated. Each duplicate is censored in a single and different country.
 * ```saved_models``` are the parameters for our best models with BERTopic
 * ```labelling``` are the labels for the 125 French tweets that have been manually labelled
 
